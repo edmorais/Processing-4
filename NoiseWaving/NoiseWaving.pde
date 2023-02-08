@@ -55,7 +55,7 @@ void setup(){
   in = minim.getLineIn();
   noisey = new float[in.bufferSize()];
 
-  noLoop();
+  //noLoop();
 }
  
 void draw() {
