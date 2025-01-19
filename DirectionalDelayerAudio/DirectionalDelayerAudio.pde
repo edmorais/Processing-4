@@ -5,10 +5,11 @@
 /___/\_,_/\_,_/\_,_/_/  \_,_/\___/ /_/  /_/\___/_/  \_,_/_/___/
  
  * Directional Delayer - audio controlled
- * by Eduardo Morais 2016 - www.eduardomorais.pt
+ * by Eduardo Morais 2016-2025 - www.eduardomorais.pt
  
  * You can drag and drop video files into the sketch window
  * Press C to go back to webcam, S to save screenshot
+ * Press 1 to 5 to select mode (but big audio peaks can change the mode!)
  */
 
 import processing.video.*;
@@ -221,12 +222,20 @@ void keyPressed() {
     showMap = true;
   }
 }
-mmmmmm
+
 void keyReleased() {
 
   if (key == 'c' || key == 'C') {
     live = !live;
     // prepareCamera();
+  }
+
+  if (key >= '1' && key <= '5') {
+    if (mode != key - '1') {
+      mode = key - '1';
+      offsets();
+      background(0);
+    }
   }
 
   if (key == 'm' || key == 'M') {

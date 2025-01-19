@@ -13,10 +13,10 @@
 
 
 // config 
-int   $appWinWidth   = 1024;
-int   $appWinHeight  = 1024;
-color $appWinBG      = #120D82;
-color $appDefStroke  = #FFFFFF;
+int   WIN_WIDTH      = 1024;
+int   WIN_HEIGHT     = 1024;
+color WIN_BG         = #120D82;
+color DEFAULT_COLOR  = #FFFFFF;
 
 
 // constants
@@ -38,12 +38,12 @@ Critter[] $critters;
   SETTINGS & SETUP
 */
 void settings() {
-  size($appWinWidth, $appWinHeight);
+  size(WIN_WIDTH, WIN_HEIGHT);
   pixelDensity(1);
 }
 
 void setup() {
-  background($appWinBG);
+  background(WIN_BG);
   noFill();
   noStroke();
   noCursor();
@@ -67,8 +67,8 @@ void setup() {
   DRAW
 */
 void draw() {
-  windowBlur($appWinBG, 16);
-  //background($appWinBG);
+  windowBlur(WIN_BG, 16);
+  //background(WIN_BG);
   blendMode(SCREEN);
   
   $tick = $tick == SIMDETAIL ? 0 : $tick+1;

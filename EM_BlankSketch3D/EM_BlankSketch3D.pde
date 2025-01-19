@@ -12,11 +12,11 @@
 import peasy.*;
 
 // config
-int   $appWinWidth   = 1024;
-int   $appWinHeight  = 1024;
-color $appWinBG      = #221DC2;
-color $appDefStroke  = #FFFFFF;
-color $appDefFill  = #FFFFFF;
+int   WIN_WIDTH   = 1024;
+int   WIN_HEIGHT  = 1024;
+color WIN_BG      = #221DC2;
+color DEFAULT_STROKE  = #FFFFFF;
+color DEFAULT_FILL  = #FFFFFF;
 
 // constants
 
@@ -30,12 +30,12 @@ CameraState $camstate;
   SETTINGS & SETUP
  */
 void settings() {
-  size($appWinWidth, $appWinHeight, P3D);
+  size(WIN_WIDTH, WIN_HEIGHT, P3D);
   pixelDensity(1);
 }
 
 void setup() {
-  background($appWinBG);
+  background(WIN_BG);
   noFill();
   noCursor();
   frameRate(60);
@@ -54,12 +54,15 @@ void setup() {
  DRAW
  */
 void draw() {
-  windowBlur($appWinBG, 0);
+  /*
+  windowBlur(WIN_BG, 0);
   rectMode(CENTER);
-  fill($appDefFill);
-  stroke($appDefStroke);
+  fill(DEFAULT_FILL);
+  stroke(DEFAULT_STROKE);
   hint(DISABLE_DEPTH_TEST); // 3D surface opacity thing
   rect(width/2, height/2, width/4, height/4);
+  */
+  
 }
 
 
